@@ -57,7 +57,7 @@ const staffs = [
   },
 ];
 
-const scores = [57, 46, 65, 72, 44, 68, 52, 62, 59, 70, 55];
+const scores = [57, 46, 65, 72, 44, 68, 5, 62, 59, 70, 55];
 
 // forEach
 // staffs.forEach((staff) => {
@@ -67,13 +67,16 @@ const scores = [57, 46, 65, 72, 44, 68, 52, 62, 59, 70, 55];
 // });
 
 // Map
-// const surname = staffs.map((staff) => {
-//   return staff.surname;
+// Get Firstnames
+// const firstNames = staffs.map((staff) => {
+//   return staff.firstname;
 // });
 
-const surname = staffs.map((staff) => staff.surname);
-// console.log(surname);
+const firstNames = staffs.map((staff) => staff.firstname);
 
+// console.log(firstNames);
+
+// Get Details
 // const details = staffs.map((staff) => {
 //   return `${staff.surname} earns ${staff.salary} monthly.`;
 // });
@@ -84,23 +87,27 @@ const details = staffs.map(
 
 // console.log(details);
 
-const scoresSqrt = scores
+// Get SquareRoot
+const squareRoot = scores
   .map((score) => Math.sqrt(score))
   .map((score) => score * 2)
   .map((score) => Math.floor(score / 5));
-// console.log(scoresSqrt);
+
+// console.log(squareRoot);
 
 // Filter
-// const passScores = scores.filter((score) => {
-//   if (score >= 50) {
+// Get Fail marks
+// const failMark = scores.filter((score) => {
+//   if (score <= 49) {
 //     return true;
 //   }
 // });
 
-const passScores = scores.filter((score) => score >= 50);
+const failMark = scores.filter((score) => score <= 49);
 
-// console.log(passScores);
+// console.log(failMark);
 
+// Filter Male Staffs
 // const maleStaffs = staffs.filter((staff) => {
 //   if (staff.gender === "Male") {
 //     return true;
@@ -111,11 +118,17 @@ const maleStaffs = staffs.filter((staff) => staff.gender === "Male");
 
 // console.log(maleStaffs);
 
+const richStaffs = staffs.filter((staff) => staff.salary >= 100000);
+
+// console.log(richStaffs);
+
 // Sort
 const sort = scores.sort((a, b) => b - a);
+
 // console.log(sort);
 
 // Reduce
+// Get total scores
 // const totalScores = scores.reduce((total, score) => {
 //   return total + score;
 // }, 0);
@@ -130,4 +143,4 @@ const totalScores = scores.reduce((total, score) => total + score, 0);
 
 const totalSalaries = staffs.reduce((total, staff) => total + staff.salary, 0);
 
-// console.log(totalSalaries);
+console.log(totalSalaries);
